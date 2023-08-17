@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>COMANDOS GPS</title>
+
+      <link rel="stylesheet" href="styles.css">
+
+              <script>
+                function copyToClipboard(command) {
+                  const textArea = document.createElement('textarea');
+                  textArea.value = command;
+                  document.body.appendChild(textArea);
+                  textArea.select();
+                  document.execCommand('copy');
+                  document.body.removeChild(textArea);
+                  alert('Comando copiado al portapapeles: ' + command);
+                      
+
+                }
+              </script>
+
+
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+               
+
+  </head>
+
+
+<body>
+
+  <nav>
+    <div class="container-center"> 
+        <div class="container-fluid">
+                <h6> <a href="index_b.html.html">VOLVER A COMANDOS / TEMPLATES</a> </h6>
+                  <tittle><h1>COMNDOS</h1></tittle>
+        </div>
+    </div>
+  </nav>
+
+
+
+ 
+ 
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+  <div class="container-fluid">
+    <h1> GV55</h1>
+    <div class="buttons">
+      <button id="gv55-global" onclick="copyToClipboard('AT+GTCFG=gv55w,gv55w,GV55W,1,0.0,,,7F,0,0,4300C,,1,0,300,00,,0,1,F,0,0,0,FFFF$')">GLOBAL</button>
+      <button id="gv55-bloqueo" onclick="copyToClipboard('AT+GTOUT=gv55w,1,0,0,0,0,0,,,,3,,0,,,,,FFFF$')">BLOQUEO</button>
+      <button id="gv55-desbloqueo" onclick="copyToClipboard('AT+GTOUT=gv55w,0,,,0,0,0,,,,3,,0,,,,,FFFF$')">DESBLOQUEO</button>
+      <button id="gv75-reset" onclick="copyToClipboard('AT+GTRTO=gv55w,3,,,,,,FFFF$')">RESET</button>
+      <button id="gv55-trans30" onclick="copyToClipboard('AT+GTFRI=gv55w,1,1,,1,0000,0000,,30,1000,1000,,0,30,0,,,,FFFF$')">TRANSMI CADA 30 seg.</button>
+      <button id="gv55-transNormal" onclick="copyToClipboard('AT+GTFRI=gv55w,1,1,,1,0000,0000,,60,1000,1000,,70,3600,,,,,FFFF$')">TRANSMI normal.</button>
+      <button id="gv55-apn_entel_DENWA" onclick="copyToClipboard('AT+GTQSS=gv55w,m2m.entel.cl,entelpcs,entelpcs,6,,1,200.29.18.140,30006,200.29.18.139,30006,,0,0,0,,FFFF$')">APN ENTEL DENWA</button>
+      <button id="gv55-apn_movistar_DENWA" onclick="copyToClipboard('AT+GTQSS=gv55w,m2m.movistar.cl,,,6,,1,200.29.18.140,30006,200.29.18.139,30006,,0,0,0,,FFFF$')">APN MOVISTAR DENWA</button>
+      <button id="gv55-apn_entel_QANALITICS" onclick="copyToClipboard('AT+GTQSS=gv55w,m2m.entel.cl,entelpcs,entelpcs,3,,1,198.41.36.102,7010,0.0.0.0,0,,0,0,0,,FFFF$')">APN ENTEL Q-ANALITICS</button>
+      <button id="gv55-apn_movistar_QANALITICS" onclick="copyToClipboard('AT+GTQSS=gv55w,m2m.movistar.cl,,,3,,1,198.41.36.102,7010,0.0.0.0,0,,0,0,0,,FFFF$')">APN MOVISTAR Q-ANALITICS</button>
+      
+    </div>
+  </div>
+  <div class="col">
+    <h1> GV75</h1>
+    <div class="buttons">
+      <button id="gv75-global" onclick="copyToClipboard('AT+GTCFG=gv75w,gv75w,GV75W,1,0,,,7F,0,F,300C,,1,0,300,00,1,0,1,1F,0,0,FFFF$')">GLOBAL</button>
+      <button id="gv75-bloqueo" onclick="copyToClipboard('AT+GTOUT=gv75w,1,0,0,0,0,0,,,,3,,0,,,,,FFFF$')">BLOQUEO</button>
+      <button id="gv75-desbloqueo" onclick="copyToClipboard('AT+GTOUT=gv75w,0,,,0,0,0,,,,3,,0,,,,,FFFF$')" >DESBLOQUEO</button>
+      <button id="gv75-reset" onclick="copyToClipboard('AT+GTRTO=gv75w,3,,,,,,FFFF$')">RESET</button>
+      <button id="gv75-trans30" onclick="copyToClipboard('AT+GTFRI=gv75w,1,1,,1,0000,0000,,30,1000,1000,,0,30,0,,,,FFFF$')">TRANSMI CADA 30 seg.</button>
+      <button id="gv75-transNormal" onclick="copyToClipboard('AT+GTFRI=gv75w,1,1,,0,0000,0000,,60,1000,1000,,50,3600,0,,,,FFFF$')">TRANSMI normal.</button>
+      <button id="gv75-apn_entel_DENWA" onclick="copyToClipboard('AT+GTQSS=gv75w,m2m.entel.cl,entelpcs,entelpcs,6,,1,200.29.18.140,30004,200.29.18.139,30004,,0,0,0,,FFFF$')">APN ENTEL DENWA</button>
+      <button id="gv75-apn_movistar_DENWA" onclick="copyToClipboard('AT+GTQSS=gv75w,m2m.movistar.cl,,,6,,1,200.29.18.140,30004,200.29.18.139,30004,,0,0,0,,FFFF$')">APN MOVISTAR DENWA</button>
+      <button id="gv75-apn_entel_QANALITICS" onclick="copyToClipboard('AT+GTQSS=gv75w,m2m.entel.cl,entelpcs,entelpcs,3,,1,198.41.36.102,7010,0.0.0.0,0,,0,0,0,,FFFF$')">APN ENTEL Q-ANALITICS</button>
+      <button id="gv75-apn_movistar_QANALITICS" onclick="copyToClipboard('AT+GTQSS=gv75w,m2m.movistar.cl,,,3,,1,198.41.36.102,7010,0.0.0.0,0,,0,0,0,,FFFF$')">APN MOVISTAR Q-ANALITICS</button>
+
+    </div>
+  </div>
+  <div class="col">
+    <h1> GV300</h1>
+    <div class="buttons">
+      <button id="gv300-global" onclick="copyToClipboard('AT+GTCFG=gv300w,gv300w,gv300w,1,0,,,7F,0,,300C,1,1,0,300,10,,1,1,1F,0,,0,FFFF$')">GLOBAL</button>
+      <button id="gv300-reset" onclick="copyToClipboard('AT+GTRTO=gv300w,3,,,,,,FFFF$')">RESET</button>
+      <button id="gv300-bloqueo" onclick="copyToClipboard('AT+GTOUT=gv300w,1,0,0,0,0,0,0,0,0,7,,0,0,,,,FFFF$')">BLOQUEO</button>
+      <button id="gv300-desbloqueo" onclick="copyToClipboard('AT+GTOUT=gv300w,0,,,0,0,0,0,0,0,7,,0,0,,,,FFFF$')">DESBLOQUEO</button>
+      <button id="gv300-trans30" onclick="copyToClipboard('AT+GTFRI=gv300w,1,1,0,0,0000,0000,60,60,1000,1000,,0,30,0,,,,FFFF$')">TRANSMI CADA 30 seg.</button>
+      <button id="gv300-transNormal" onclick="copyToClipboard('AT+GTFRI=gv300w,1,1,0,0,0000,0000,60,60,1000,1000,,0,3600,0,,,,FFFF$')">TRANSMI normal.</button>
+      <button id="gv300-apn_entel_DENWA" onclick="copyToClipboard('AT+GTQSS=gv300w,m2m.entel.cl,entelpcs,entelpcs,6,,1,200.29.18.140,30002,200.29.18.139,30002,,0,0,0,,FFFF$')">APN ENTEL DENWA</button>
+      <button id="gv300-apn_movistar_DENWA" onclick="copyToClipboard('AT+GTQSS=gv300w,m2m.movistar.cl,,,6,,1,200.29.18.140,30002,200.29.18.139,30002,,0,0,0,,FFFF$')">APN MOVISTAR DENWA</button>
+      <button id="gv300-apn_entel_QANALITICS" onclick="copyToClipboard('AT+GTQSS=gv300w,m2m.entel.cl,entelpcs,entelpcs,3,,1,198.41.36.102,7010,0.0.0.0,0,,0,0,0,,FFFF$')">APN ENTEL Q-ANALITICS</button>
+      <button id="gv300-apn_movistar_QANALITICS" onclick="copyToClipboard('AT+GTQSS=gv300w,m2m.movistar.cl,,,3,,1,198.41.36.102,7010,0.0.0.0,0,,0,0,0,,FFFF$')">APN MOVISTAR Q-ANALITICS</button>
+
+    </div>
+  </div>
+</div>
+</div>
+    <h1>PROGRAMACIÓN COLDTRUCK</h1>
+    <div class="buttons">
+      <button id="gv55-apn-entel" onclick="copyToClipboard('AT+GTQSS=gv55w,m2m.entel.cl,entelpcs,entelpcs,3,,1,198.41.36.102,7010,,0,,0,0,0,,FFFF$')">APN ENTEL</button>
+      <button id="gv55-apn-movistar" onclick="copyToClipboard('AT+GTQSS=gv55w,m2m.movistar.cl,,,3,,1,198.41.36.102,7010,,0,,0,0,0,,FFFF$')">APN MOVISTAR</button>
+      <button id="gv55-global-config" onclick="copyToClipboard('AT+GTCFG=gv55w,gv55w,GV55W,1,0.0,,,7F,0,0,4300C,,1,0,300,00,,0,1,F,0,0,0,FFFF$')">GLOBAL</button>
+      <button id="gv55-velocidad-transmision" onclick="copyToClipboard('AT+GTFRI=gv55w,1,0,,0,0000,0000,,30,300,1000,,70,60,,,,,FFFF$')"> 1. VELOCIDAD TRANSMISIÓN</button>
+      <button id="gv55-config-visualizacion" onclick="copyToClipboard('AT+GTDIS=gv55w,0,1,1,0,1,1,1,1,,,,,,,,,,,,,FFFF$')">2. CONFIG VISUALIZACIÓN</button>
+      <button id="gv55-config-hora-fecha" onclick="copyToClipboard('AT+GTHMC=gv55w,1,00000:00:00,,,,,,,,,FFFF$')">3. CONFIG HORA Y FECHA</button>
+    
+    </div>
+  
+        <div class="container-fluid">
+                    <h1>AGENDAMIENTO TIPO</h1>
+                    <button id="botonAgendamiento" onclick="abrirModal()">AGENDAMIENTO TIPO</button>
+            
+              <!-- Modal -->
+              <div id="modalAgendamiento" style="display: none;">
+                      <label for="empresa">Empresa:</label>
+                      <input type="text" id="empresa" required><br>
+                      <label for="cliente">Cliente:</label>
+                      <input type="text" id="cliente" required><br>
+                      <label for="celular">Celular:</label>
+                      <input type="text" id="celular" required><br>
+                      <label for="patente">Patente:</label>
+                      <input type="text" id="patente" required><br>
+                      <label for="direccion">Direccion:</label>
+                      <input type="text" id="direccion" required><br>
+                      <label for="observacion">Observacion:</label>
+                      <input type="text" id="observacion" required><br>
+                      <button onclick="copiarAlPortapapeles()">Copiar al Portapapeles</button>
+                  </div>
+            
+                      <script>
+                            function abrirModal() {
+                              document.getElementById('modalAgendamiento').style.display = 'block';
+                            }
+                        
+                            function cerrarModal() {
+                              document.getElementById('modalAgendamiento').style.display = 'none';
+                            }
+                        
+                            // Función para copiar el texto al portapapeles y abrir Google Calendar
+                            function copiarAlPortapapeles() {
+                              var empresa = document.getElementById('empresa').value;
+                              var cliente = document.getElementById('cliente').value;
+                              var celular = document.getElementById('celular').value;
+                              var patente = document.getElementById('patente').value;
+                              var direccion = document.getElementById('direccion').value;
+                              var observacion = document.getElementById('observacion').value;
+                        
+                              var texto =
+                                empresa + " Mantencion Id xxxxx, XXXXX.\n" +
+                                "Empresa: " + empresa + "\n" +
+                                "ID instalacion: xx\n" +
+                                "Cliente: " + cliente + "\n" +
+                                "Cel.: " + celular + "\n" +
+                                "Veh.: xx\n" +
+                                "Patente: " + patente + "\n" +
+                                "Direccion: " + direccion + "\n" +
+                                "Fecha: xx\n" +
+                                "Hora: xx\n" +
+                                "\n" +
+                                "OBS: " + observacion;
+                        
+                              var elementoTemporal = document.createElement("textarea");
+                              elementoTemporal.value = texto;
+                              document.body.appendChild(elementoTemporal);
+                        
+                              elementoTemporal.select();
+                              elementoTemporal.setSelectionRange(0, 99999);
+                        
+                              var exito = document.execCommand("copy");
+                        
+                              document.body.removeChild(elementoTemporal);
+                        
+                              if (exito) {
+                                alert("Texto copiado al portapapeles correctamente.");
+                                cerrarModal();
+                              } else {
+                                alert("Error al copiar el texto al portapapeles. Intenta nuevamente.");
+                              }
+                        
+                              var urlGoogleCalendar = "https://calendar.google.com/calendar/u/0/r/create";
+                              window.open(urlGoogleCalendar, "_blank");
+                              
+                              var urlMantencionDenwa = "https://gps-ticket.mavimovil.com/#/tickets/maintenance/new";
+                              window.open(urlMantencionDenwa, "_blank");
+                            }
+                          </script>
+              
+         </div>
+  
+            
+    
+
+   
+
+
+    <div class="container-fluid">
+       <h1>AGENDAMIENTO OPEL / PEUGEOT</h1>
+ 
+              <button onclick="abrirOpel()">Ir a Opel</button>
+
+      
+              <button onclick="abrirPeugeot()">Ir a Peugeot</button>
+
+          <script>
+     
+                function abrirOpel() {
+                    var url = "https://opel.in-touch.cl/agendamiento/cliente/";
+                    window.open(url, "_blank");
+                    var urlGoogleCalendar = "https://calendar.google.com/calendar/u/0/r/create";
+              window.open(urlGoogleCalendar, "_blank");
+                }
+
+    
+                function abrirPeugeot() {
+                    var url = "https://peugeot.in-touch.cl/cliente/";
+                    window.open(url, "_blank");
+                    var urlGoogleCalendar = "https://calendar.google.com/calendar/u/0/r/create";
+              window.open(urlGoogleCalendar, "_blank");
+                }
+            </script>
+
+     </div>
+  </div>
+
+</body>
+</html>

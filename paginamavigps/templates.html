@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>SOPORTE MAVIGPS</title>
+    
+                    <link rel="stylesheet" href="styles.css">
+    
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+                   
+                    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
+      
+
+         <title>OMUNA</title>
+         
+             <script>
+                        // Función para copiar el texto al portapapeles
+                        function copyToClipboard(texto) {
+                            // Crea un elemento de textarea temporal para copiar el texto
+                            var elementoTemporal = document.createElement("textarea");
+                            elementoTemporal.value = texto;
+                            document.body.appendChild(elementoTemporal);
+
+                            // Selecciona el contenido del textarea
+                            elementoTemporal.select();
+                            elementoTemporal.setSelectionRange(0, 99999); // Para dispositivos móviles
+
+                            // Intenta copiar el texto al portapapeles
+                            var exito = document.execCommand("copy");
+
+                            // Elimina el textarea temporal
+                            document.body.removeChild(elementoTemporal);
+
+                            // Muestra una notificación de éxito o error
+                            if (exito) {
+                                alert("Texto copiado al portapapeles correctamente.");
+                            } else {
+                                alert("Error al copiar el texto al portapapeles. Intenta nuevamente.");
+                            }
+                        }
+                
+                        // Función para mostrar la ventana emergente para elegir compañía
+                        function mostrarOpciones() {
+                            var ventanaOpciones = document.getElementById('ventanaOpciones');
+                            ventanaOpciones.style.display = 'block';
+                        }
+                
+                        // Función para llenar los campos con la compañía seleccionada y el mensaje
+                        function llenarCampos() {
+                            var seleccionCompania = document.getElementById('seleccionCompania');
+                            var rutCliente = document.getElementById('rutCliente').value;
+                
+                            var companiaSeleccionada = seleccionCompania.value;
+                            var mensaje = `Estimado Cliente:\nLe indico los pasos para acceder a su aplicación:\n1. Descargue su aplicación "${companiaSeleccionada}" desde App Store o Google Play.\n2. Ingrese su usuario y contraseña. El usuario es su rut ("${rutCliente}") y su contraseña los primeros 4 digitos del rut.\n3. si el rut termina en "K", verificar que la letra sea ingresada con mayuscula.\n4. Si desea cambiar su contraseña, antes de iniciar sesión debe ingresar a la opción "¿Olvidaste tu contraseña?" en la pantalla inicial de su aplicación.`;
+                
+                            var companiaSeleccionadaElemento = document.getElementById('companiaSeleccionada');
+                            var mensajeResultadoElemento = document.getElementById('mensajeResultado');
+                
+                            companiaSeleccionadaElemento.textContent = companiaSeleccionada;
+                            mensajeResultadoElemento.textContent = mensaje;
+                
+                            var resultado = document.getElementById('resultado');
+                            resultado.style.display = 'block';
+                
+                            var botonCopiar = document.getElementById('botonCopiar');
+                            botonCopiar.style.display = 'block';
+                        }
+                
+                        // Función para copiar el mensaje al portapapeles
+                        function copiarMensaje() {
+                            var mensajeResultadoElemento = document.getElementById('mensajeResultado');
+                
+                            // Crea un elemento de textarea temporal para copiar el texto
+                            var elementoTemporal = document.createElement('textarea');
+                            elementoTemporal.value = mensajeResultadoElemento.textContent;
+                            document.body.appendChild(elementoTemporal);
+                
+                            // Selecciona el contenido del textarea
+                            elementoTemporal.select();
+                            elementoTemporal.setSelectionRange(0, 99999); // Para dispositivos móviles
+                
+                            // Intenta copiar el texto al portapapeles
+                            var exito = document.execCommand('copy');
+                
+                            // Elimina el textarea temporal
+                            document.body.removeChild(elementoTemporal);
+                
+                            // Muestra una notificación de éxito o error
+                            if (exito) {
+                                alert('Mensaje copiado al portapapeles correctamente.');
+                            } else {
+                                alert('Error al copiar el mensaje al portapapeles. Intenta nuevamente.');
+                            }
+                        }
+             </script>
+        </head>
+
+ <body>
+        
+    <nav>
+        <div class="container text-center">
+       
+            <div class="container-fluid">
+                    <h6> <a href="index_b.html">VOLVER A COMANDOS</a> </h6>
+            
+            </div>
+         </div>
+      </nav>
+       
+            <b>
+<title>    </title>
+                    <div class="container-center">
+                                    <div class="container-fluid">
+                                        <!-- Botón para elegir compañía -->
+                                        <button onclick="mostrarOpciones()">ACCESO A LA APP</button>
+                            
+                                        <!-- Ventana emergente para elegir compañía -->
+                                        <div id="ventanaOpciones" style="display: none;">
+                                            <h2>Elige una compañía:</h2>
+                                            <select id="seleccionCompania">
+                                                <option value="MyPeugeot Care">MyPeugeot Care</option>
+                                                <option value="MyOpelCare">MyOpelCare</option>
+                                                <option value="GPS OLX AUTOS">GPS OLX AUTOS</option>
+                                                <option value="GPS EUROCAPITAL">GPS EUROCAPITAL</option>
+                                                <option value="GPS AUTOFIN">GPS AUTOFIN</option>
+                                                <option value="GPS MAVIGPS">GPS MAVIGPS</option>
+                                            </select>
+                                            <br>
+                                            <label for="rutCliente">Ingresa el Rut del cliente:</label>
+                                            <input type="text" id="rutCliente">
+                                            <br>
+                                            <button onclick="llenarCampos()">Aceptar</button>
+                                        </div>
+                            
+                                        <!-- Campo donde se muestra la compañía seleccionada y el mensaje -->
+                                        <div id="resultado" style="display: none;">
+                                            <h2>COMPAÑÍA:</h2>
+                                            <p id="companiaSeleccionada"></p>
+                                            <h2>Mensaje:</h2>
+                                            <p id="mensajeResultado"></p>
+                                        </div>
+                            
+                                        <!-- Botón para copiar el mensaje generado -->
+                                        <button id="botonCopiar" style="display: none;" onclick="copiarMensaje()">Copiar Mensaje</button>
+                            
+                                            
+                                    </div>
+                     <div>
+                    <!-- Botón para copiar el mensaje "REVISANDO INCIDENCIA" al portapapeles -->
+                    <button onclick='copyToClipboard("Estimado cliente, nos encontramos revisando su incidencia reportada, en breve nos pondremos en contacto con ud. para revisar el servicio en conjunto. Saludos cordiales.")'>
+                        REVISANDO INCIDENCIA
+                    </button>
+
+                    <!-- Botón para copiar el mensaje "PEDIR DATOS" al portapapeles -->
+                    <button onclick='copyToClipboard("Estimado Cliente, para poder ayudarle, necesitamos que nos indique el rut del titular del servicio y la patente del vehículo, también su número de contacto para llamarle en caso de ser necesario.")'>
+                        PEDIR DATOS
+                    </button>
+
+                    <!-- Botón para copiar el mensaje "SE REALIZAN CONFIGURACIONES + Bloqueo" al portapapeles -->
+                    <button onclick='copyToClipboard("Estimado cliente, hemos configurado su sistema, le pedimos por favor que reinstale su aplicación. Para configurar su clave de bloqueo o acceso, por favor contáctenos a al 6000 850 097 opción 3 Soporte, en horario : Lun-Vier 8AM - 8PM.")'>
+                        SE REALIZAN CONFIGURACIONES + Bloqueo
+                    </button>
+                    
+                    
+                    <button onclick='copyToClipboard("Estimado cliente, hemos configurado su sistema, le pedimos por favor que reinstale su aplicación.")'>
+                        SE REALIZAN CONFIGURACIONES
+                    </button>
+
+                    <!-- Botón para copiar el mensaje "INTENTO DE CONTACTO" al portapapeles -->
+                    <button onclick='copyToClipboard("Estimado cliente, nos hemos intentado comunicar con ud sin exito, con la intencion de revisar en conjunto el servicio, por favor indiquenos un horario y un numero de contacto para poder resolver la incidencia reportada. Muy atentos.")'>
+                        INTENTO DE CONTACTO
+                    </button>
+
+                    <!-- Botón para copiar el mensaje "VISITA TECNICA" al portapapeles -->
+                    <button onclick='copyToClipboard("Estimado cliente,\nEsperamos que se encuentre bien. Le escribimos para coordinar una visita técnica con el fin de revisar el funcionamiento de su servicio GPS y asegurarnos de que todo esté configurado correctamente.\n\nPor favor, indíquenos un horario y un número de contacto donde podamos comunicarnos con usted para coordinar la visita técnica. Quedamos atentos a su pronta respuesta para agendar la visita en el momento que le sea más conveniente. Agradecemos su preferencia y confianza en nuestros servicios.")'>
+                        VISITA TECNICA
+                    </button>
+
+                       <!-- Botón para copiar el mensaje "SE CONTACTA A CLIENTE, SE REALIZAN PRUEBAS" al portapapeles -->
+                       <button onclick='copyToClipboard("Se contacta con cliente, se realizan pruebas de soporte remoto, servicio opera con normalidad, cliente conforme, se cierra ticket.")'>
+                        SE CONTACTA A CLIENTE
+                    </button>
+                </div>
+         </div>
+    </body> 
+</html>
+
+

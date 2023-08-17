@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles_agendamiento.css">
+
+    <title>:::AGENDAMIENTO::::</title>
+  </head>
+</body>
+
+<nav>
+  <div class="container text-center">
+ 
+      <div class="container-fluid">
+        <ul>
+          <li>
+            <a href="index_b.html">VOLVER A COMANDOS</a>
+             <li>
+            <a href="templates.html">TEMPLATES</a> 
+          </li>
+           
+          </li>
+            
+            </ul>
+      </div>
+   </div>
+</nav>
+
+<b>
+
+
+<div style="text-align: center;" class="container-fluid">
+
+    <h1>AGENDAMIENTO TIPO</h1>
+    <button id="botonAgendamiento" onclick="abrirModal()">AGENDAMIENTO TIPO</button>
+
+
+              <div id="modalAgendamiento" style="display: none;">
+                    <label for="empresa">Empresa:</label>
+                    <input type="text" id="empresa" required><br>
+                    <label for="cliente">Cliente:</label>
+                    <input type="text" id="cliente" required><br>
+                    <label for="celular">Celular:</label>
+                    <input type="text" id="celular" required><br>
+                    <label for="patente">Patente:</label>
+                    <input type="text" id="patente" required><br>
+                    <label for="direccion">Direccion:</label>
+                    <input type="text" id="direccion" required><br>
+                    <label for="observacion">Observacion:</label>
+                    <input type="text" id="observacion" required><br>
+                    <button onclick="copiarAlPortapapeles()">Copiar al Portapapeles</button>
+                </div>
+
+          <script>
+            function abrirModal() {
+              document.getElementById('modalAgendamiento').style.display = 'block';
+            }
+        
+            function cerrarModal() {
+              document.getElementById('modalAgendamiento').style.display = 'none';
+            }
+        
+            // Función para copiar el texto al portapapeles y abrir Google Calendar
+            function copiarAlPortapapeles() {
+              var empresa = document.getElementById('empresa').value;
+              var cliente = document.getElementById('cliente').value;
+              var celular = document.getElementById('celular').value;
+              var patente = document.getElementById('patente').value;
+              var direccion = document.getElementById('direccion').value;
+              var observacion = document.getElementById('observacion').value;
+        
+              var texto =
+                empresa + " Mantencion Id xxxxx, XXXXX.\n" +
+                "Empresa: " + empresa + "\n" +
+                "ID instalacion: xx\n" +
+                "Cliente: " + cliente + "\n" +
+                "Cel.: " + celular + "\n" +
+                "Veh.: xx\n" +
+                "Patente: " + patente + "\n" +
+                "Direccion: " + direccion + "\n" +
+                "Fecha: xx\n" +
+                "Hora: xx\n" +
+                "\n" +
+                "OBS: " + observacion;
+        
+              var elementoTemporal = document.createElement("textarea");
+              elementoTemporal.value = texto;
+              document.body.appendChild(elementoTemporal);
+        
+              elementoTemporal.select();
+              elementoTemporal.setSelectionRange(0, 99999);
+        
+              var exito = document.execCommand("copy");
+        
+              document.body.removeChild(elementoTemporal);
+        
+              if (exito) {
+                alert("Texto copiado al portapapeles correctamente.");
+                cerrarModal();
+              } else {
+                alert("Error al copiar el texto al portapapeles. Intenta nuevamente.");
+              }
+        
+              var urlGoogleCalendar = "https://calendar.google.com/calendar/u/0/r/create";
+              window.open(urlGoogleCalendar, "_blank");
+              
+              var urlMantencionDenwa = "https://gps-ticket.mavimovil.com/#/tickets/maintenance/new";
+              window.open(urlMantencionDenwa, "_blank");
+            }
+          </script>
+
+      </div>
+  </div>
+
+
+
+
+
+
+
+<div style="text-align: center;" class="container-fluid">
+<h1>AGENDAMIENTO OPEL / PEUGEOT</h1>
+
+      <button onclick="abrirOpel()">Ir a Opel</button>
+
+
+      <button onclick="abrirPeugeot()">Ir a Peugeot</button>
+
+              <script>
+
+              function abrirOpel() {
+                  var url = "https://opel.in-touch.cl/agendamiento/cliente/";
+                  window.open(url, "_blank");
+                  var urlGoogleCalendar = "https://calendar.google.com/calendar/u/0/r/create";
+              window.open(urlGoogleCalendar, "_blank");
+              }
+
+
+              function abrirPeugeot() {
+                  var url = "https://peugeot.in-touch.cl/cliente/";
+                  window.open(url, "_blank");
+                  var urlGoogleCalendar = "https://calendar.google.com/calendar/u/0/r/create";
+              window.open(urlGoogleCalendar, "_blank");
+              }
+              </script>
+
+</div>
+</div>
+
+</body>
+</html>

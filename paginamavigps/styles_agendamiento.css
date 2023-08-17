@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e73838; /* Color de fondo general */
+  }
+  
+  header {
+    background-color: #8B0000; /* Rojo oscuro */
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  container {
+    max-width: 1200px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 20px;
+    background-color: white; /* Fondo blanco */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del contenedor */
+  }
+  
+  footer {
+    background-color: #8B0000; /* Rojo oscuro */
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 24px; /* Tamaño regular, pero puedes ajustarlo según tus preferencias */
+    font-weight: bold; /* Negrita */
+    color: #333; /* Color oscuro, pero también puedes cambiarlo según lo necesites */
+    margin: 20px 0; /* Espaciado alrededor del título */
+  }
+  
+  .container-fluid-lg{
+    max-width: 1200px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 20px;
+    background-color: white; /* Fondo blanco */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del contenedor */
+  
+  }
+  
+  nav {
+    background-color: #420000; /* Rojo oscuro */
+    color: rgb(199, 199, 199);
+    padding: 50px;
+    text-align: center;
+  }
+  
+  
+  a{
+    color: rgb(209, 209, 209);
+  }

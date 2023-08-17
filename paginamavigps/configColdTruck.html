@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>COMANDOS GPS</title>
+
+      <link rel="stylesheet" href="styles.css">
+
+              <script>
+                function copyToClipboard(command) {
+                  const textArea = document.createElement('textarea');
+                  textArea.value = command;
+                  document.body.appendChild(textArea);
+                  textArea.select();
+                  document.execCommand('copy');
+                  document.body.removeChild(textArea);
+                  alert('Comando copiado al portapapeles: ' + command);
+                      
+
+                }
+              </script>
+
+
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+               
+
+  </head>
+
+<body>
+
+  <nav>
+    <div class="container-center"> 
+        <div class="container-fluid">
+                <h6> <a href="index_b.html.html">VOLVER A COMANDOS / TEMPLATES</a> </h6>
+                  <tittle><h1>COMANDOS</h1></tittle>
+        </div>
+    </div>
+  </nav>
+
+
+    <div class="container text-center">
+        <div class="row">
+          <div class="col">
+                <div class="container-fluid">
+                       <h1>PROGRAMACIÓN COLDTRUCK</h1>
+                        <div class="buttons">
+                        <button id="gv55-apn-entel" onclick="copyToClipboard('AT+GTQSS=gv55w,m2m.entel.cl,entelpcs,entelpcs,3,,1,198.41.36.102,7010,,0,,0,0,0,,FFFF$')">APN ENTEL</button>
+                        <button id="gv55-apn-movistar" onclick="copyToClipboard('AT+GTQSS=gv55w,m2m.movistar.cl,,,3,,1,198.41.36.102,7010,,0,,0,0,0,,FFFF$')">APN MOVISTAR</button>
+                        <button id="gv55-global-config" onclick="copyToClipboard('AT+GTCFG=gv55w,gv55w,GV55W,1,0.0,,,7F,0,0,4300C,,1,0,300,00,,0,1,F,0,0,0,FFFF$')">GLOBAL</button>
+                        <button id="gv55-velocidad-transmision" onclick="copyToClipboard('AT+GTFRI=gv55w,1,0,,0,0000,0000,,30,300,1000,,70,60,,,,,FFFF$')"> 1. VELOCIDAD TRANSMISIÓN</button>
+                        <button id="gv55-config-visualizacion" onclick="copyToClipboard('AT+GTDIS=gv55w,0,1,1,0,1,1,1,1,,,,,,,,,,,,,FFFF$')">2. CONFIG VISUALIZACIÓN</button>
+                        <button id="gv55-config-hora-fecha" onclick="copyToClipboard('AT+GTHMC=gv55w,1,00000:00:00,,,,,,,,,FFFF$')">3. CONFIG HORA Y FECHA</button>
+
+                        </div>
+                    </div>
+
+            </div>
+
+         </div>
+
+    </div>
+
+
+
+</body>
